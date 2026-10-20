@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Panel — CG MP Job Alert</title><link rel="stylesheet" href="/style.css"></head>
+<body><header><div class="wrap nav"><a class="brand" href="/">CG MP Job Alert</a><a href="/">Public website</a></div></header>
+<main class="wrap admin">
+  <section id="loginBox" class="panel">
+    <h1>Admin Login</h1><p>केवल अधिकृत admin के लिए।</p>
+    <form id="loginForm"><label>Username<input name="username" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button type="submit">Login</button></form>
+  </section>
+  <section id="dashboard" class="panel hidden">
+    <div class="row"><h1>Job Admin Panel</h1><button id="logout" class="secondary">Logout</button></div>
+    <p id="adminStatus" role="status"></p>
+    <h2>नई नौकरी जोड़ें</h2>
+    <form id="jobForm" class="formgrid">
+      <label>Job Title *<input name="title" maxlength="180" required></label>
+      <label>Organization *<input name="organization" maxlength="180" required></label>
+      <label>Category *<select name="category" required><option value="Government">Government</option><option value="Private">Private</option></select></label>
+      <label>State *<select name="state" required><option value="Chhattisgarh">Chhattisgarh</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Other">Other</option></select></label>
+      <label>Location *<input name="location" maxlength="180" required></label>
+      <label>Qualification *<input name="qualification" maxlength="300" required></label>
+      <label>Last Date<input name="last_date" type="date"></label>
+      <label>Official Application URL *<input name="official_url" type="url" placeholder="https://..." required></label>
+      <label class="full">Description *<textarea name="description" rows="4" maxlength="5000" required></textarea></label>
+      <div class="full"><button type="submit">Add Job</button></div>
+    </form>
+    <h2>मौजूदा नौकरियाँ</h2><div id="adminJobs"></div>
+  </section>
+  <p id="notice" role="status"></p>
+</main><script src="/admin.js" defer></script></body></html>
